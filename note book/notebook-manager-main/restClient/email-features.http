@@ -1,0 +1,45 @@
+### Register a new user (will send verification email)
+POST http://localhost:3000/user
+Content-Type: application/json
+
+{
+  "email": "maxmillianmuiruri@gmail.com",
+  "password": "password123"
+}
+
+### Verify email (use token from email)
+POST http://localhost:3000/user/verify-email?token=72bbef77ec9b7e2878b4a7986c7681fd70a69b4507ca63ad23f1af0dbd9d2dec
+
+### Resend verification email
+POST http://localhost:3000/user/resend-verification
+Content-Type: application/json
+
+{
+  "email": "maxmillianmuiruri@gmail.com"
+}
+
+### Request password reset
+POST http://localhost:3000/user/forgot-password
+Content-Type: application/json
+
+{
+  "email": "maxmillianmuiruri@gmail.com"
+}
+
+### Reset password (use token from email)
+POST http://localhost:3000/user/reset-password
+Content-Type: application/json
+
+{
+  "token": "41bc0ed9e3e25e23ab103e90b0d587219cdb2e2ed173a6638456bf4df8e50a16",
+  "newPassword": "newpassword123"
+}
+
+### Login with verified user
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+  "email": "maxmillianmuiruri@gmail.com",
+  "password": "newpassword123"
+} 

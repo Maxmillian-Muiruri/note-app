@@ -1,0 +1,42 @@
+### Create a new user (register)
+POST http://localhost:3000/user
+Content-Type: application/json
+
+{
+  "email": "john@example.com",
+  "password": "password123"
+}
+
+### Create another user
+POST http://localhost:3000/user
+Content-Type: application/json
+
+{
+  "email": "jane@example.com",
+  "password": "password456"
+}
+
+### Get all users
+GET http://localhost:3000/user
+
+### Get a single user by ID
+GET http://localhost:3000/user/1
+
+### Update a user
+PATCH http://localhost:3000/user/1
+Content-Type: application/json
+
+{
+  "email": "john.updated@example.com"
+}
+
+### Update user password
+PATCH http://localhost:3000/user/1
+Content-Type: application/json
+
+{
+  "password": "password123"
+}
+
+### Delete a user
+DELETE http://localhost:3000/user/15

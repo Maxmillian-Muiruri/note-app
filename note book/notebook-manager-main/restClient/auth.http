@@ -1,0 +1,35 @@
+### Register a new user
+POST http://localhost:3000/auth/register
+Content-Type: application/json
+
+{
+  "email": "john@example.com",
+  "password": "password123"
+}
+
+### Login with user
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+  "email": "john@example.com",
+  "password": "password123"
+}
+
+### Get user profile (requires JWT token)
+GET http://localhost:3000/auth/profile
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsImVtYWlsIjoiam9obkBleGFtcGxlLmNvbSIsImlhdCI6MTc1MDU0MDA3MiwiZXhwIjoxNzUwNjI2NDcyfQ.PcHoH5nwki6isgRcBt3dP-mHf65BJbyCWA031LRKfLI
+
+### Create a notebook (requires JWT token)
+POST http://localhost:3000/notebook
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsImVtYWlsIjoiam9obkBleGFtcGxlLmNvbSIsImlhdCI6MTc1MDU0MDA3MiwiZXhwIjoxNzUwNjI2NDcyfQ.PcHoH5nwki6isgRcBt3dP-mHf65BJbyCWA031LRKfLI
+
+{
+  "title": "My First Note",
+  "content": "This is the content of the note."
+}
+
+### Get all notebooks (requires JWT token)
+GET http://localhost:3000/notebook
+Authorization: Bearer  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsImVtYWlsIjoiam9obkBleGFtcGxlLmNvbSIsImlhdCI6MTc1MDU0MDA3MiwiZXhwIjoxNzUwNjI2NDcyfQ.PcHoH5nwki6isgRcBt3dP-mHf65BJbyCWA031LRKfLI
